@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	   xsi:schemaLocation="
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd">
+
+
+	<context:component-scan base-package="com.ylzinfo.bigdata" >
+		<context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation" />
+	</context:component-scan>
+
+	<aop:aspectj-autoproxy />
+
+	<context:property-placeholder ignore-resource-not-found="true" location="classpath*:/jdbc.properties" />
+	<!-- 数据源配置 -->
+	<bean id="DataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		  init-method="init" destroy-method="close">
+
+		<!-- Connection Info -->
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+
+		<!-- Connection Pooling Info -->
+		<!-- 连接池最大使用连接数量 -->
+		<property name="maxActive" value="${jdbc.pool.maxActive}" />
+		<!-- 初始化大小 -->
+		<property name="initialSize" value="5" />
+		<!-- 获取连接最大等待时间 -->
+		<property name="maxWait" value="60000" />
+		<!-- 连接池最小空闲 -->
+		<property name="minIdle" value="${jdbc.pool.minIdle}" />
+		<!-- 逐出连接的检测时间间隔 -->
+		<property name="timeBetweenEvictionRunsMillis" value="3000" />
+		<!-- 最小逐出时间 -->
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+		<!-- 测试有效用的SQL Query -->
+		<property name="validationQuery" value="SELECT 'x' from dual" />
+		<!-- 连接空闲时测试是否有效 -->
+		<property name="testWhileIdle" value="true" />
+		<!-- 获取连接时测试是否有效 -->
+		<property name="testOnBorrow" value="false" />
+		<!-- 归还连接时是否测试有效 -->
+		<property name="testOnReturn" value="false" />
+	</bean>
+
+
+</beans>

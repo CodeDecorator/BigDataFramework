@@ -1,0 +1,60 @@
+
+def artifactId = "bigdata-web"
+apply plugin: "eclipse-wtp"
+apply plugin: "war"
+
+
+dependencies {
+    compile project(":bigdata-common")
+
+
+    compile ( libraries.spring_core)
+    compile ( libraries.spring_context)
+    compile ( libraries.spring_context_support)
+    compile ( libraries.spring_web)
+    compile ( libraries.spring_webmvc )
+
+    compile ( libraries.jackson_core )
+    compile ( libraries.jackson_databind )
+    compile ( libraries.fastjson )
+    compile ( libraries.commons_pool )
+    compile ( libraries.commons_beanutils )
+    compile ( libraries.commons_collections )
+    compile ( libraries.commons_fileupload )
+    compile ( libraries.commons_dbcp )
+    compile ( libraries.commons_pool )
+    compile ( libraries.servlet)
+    compile ( libraries.aspectjrt)
+    compile ( libraries.aspectjweaver)
+    compile ( libraries.shiro_core )
+    compile ( libraries.shiro_web )
+    compile ( libraries.shiro_ehcache )
+    compile ( libraries.shiro_spring )
+    compile ( libraries.shiro_quartz )
+    compile ( libraries.shiro_all)
+
+    compile ( libraries.zookeeper )
+    compile ( libraries.standard)
+    compile ( libraries.jstl)
+    compile ( libraries.zkclient )
+    compile ( libraries.websocket )
+    compile ( libraries.commons_httpclient )
+    compile ( libraries.codehaus_jackson )
+    compile ( libraries.dom4j )
+	compile	( libraries.poi )
+	compile ( libraries.poi_ooxml )
+	compile ( libraries.poi_ooxml_schemas )
+	compile ( libraries.javascv)
+	compile ( libraries.pdfbox )
+    compile ( libraries.antlr )
+	compile ( libraries.classmate )
+    compile ( libraries.geronimo_jta )
+	compile ( libraries.pageoffice )
+    compile ( libraries.druid)
+    compile( libraries.gson)
+	runtime ( libraries.mysql )
+    
+    providedCompile ( libraries.jsp_api)
+    testCompile ( libraries.junit )
+    testCompile ( libraries.spring_test )
+}

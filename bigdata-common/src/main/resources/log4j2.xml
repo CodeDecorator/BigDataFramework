@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration monitorInterval="60">
+<properties>
+    <property name="pattern">%d %-5p %c{1.} [%t] %m%n</property>
+    <property name="LOG_HOME">/usr/local/bigdataWeb/logs</property>
+    <property name="FILE_NAME">mylog</property>
+</properties>
+<appenders>
+	<Console name="Console" target="SYSTEM_OUT">
+		<PatternLayout>
+            <pattern>${pattern}</pattern>
+        </PatternLayout>
+	</Console>
+    <RollingFile name="A1"
+		fileName="${LOG_HOME}/${FILE_NAME}"
+		filePattern="${LOG_HOME}/%d{yyyy-MM-dd}-${FILE_NAME}.%i.gz">
+        <PatternLayout>
+            <pattern>${pattern}</pattern>
+        </PatternLayout>
+        <Policies>
+            <SizeBasedTriggeringPolicy size="100 MB"/> <!-- Or every 100 MB -->
+        </Policies>
+        <DefaultRolloverStrategy max="20"/>
+    </RollingFile>
+    
+</appenders>
+<loggers>
+    <root level="warn"> <!-- We log everything -->
+        <appender-ref ref="A1"/>
+        <appender-ref ref="Console"/>
+    </root>
+</loggers>
+</configuration>

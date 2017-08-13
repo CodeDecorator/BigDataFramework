@@ -1,0 +1,73 @@
+// jar包的名字
+// archivesBaseName = 'common'
+dependencies {
+    // spring
+    compile( libraries.spring_jdbc )
+    compile( libraries.spring_orm )
+    compile( libraries.spring_context )
+    compile( libraries.spring_context_support )
+    compile( libraries.spring_web)
+    compile( libraries.spring_webmvc)
+
+    //spring-data-jpa
+    compile( libraries.spring_data_jpa )
+
+    // shiro
+    compile ( libraries.shiro_core )
+    compile ( libraries.shiro_web )
+    compile ( libraries.shiro_ehcache )
+    compile ( libraries.shiro_spring )
+    compile ( libraries.shiro_quartz )
+    compile ( libraries.shiro_all)
+
+    compile( libraries.jackson_core)
+    compile( libraries.jackson_databind)
+
+    compile ( libraries.trove )
+    compile ( libraries.configuration )
+
+    compile( libraries.zip4j )
+    compile( libraries.zipjbinding )
+    compile( libraries.zipjbindingLinux )
+    compile( libraries.dom4j )
+
+
+    // apache commons
+    compile( libraries.commons_collections)
+    compile( libraries.commons_lang3)
+    compile( libraries.commons_io)
+    
+    // hibernate
+    compile ( libraries.hibernate_core )
+    compile ( libraries.hibernate_ehcache )
+    compile ( libraries.hibernate_validator)
+    compile ( libraries.c3p0 )
+    compile ( libraries.velocity )
+    compile ( libraries.velocity_tools )
+
+    compile ( libraries.commons_codec )
+    compile ( libraries.commons_io )
+
+    compile ( libraries.guava)
+    compile ( libraries.springside_core)
+    compile ( libraries.springside_utils)
+    compile ( libraries.tomcat_jdbc)
+
+    compile( libraries.pinyin4j )
+    compile( libraries.tike_core )
+    compile( libraries.hanlp )
+    compile( libraries.poi )
+
+    compile( libraries.druid)
+
+    compile( libraries.lombok)
+    compile( libraries.servlet)
+    compile( libraries.jade_remote_core)
+    compile( libraries.uum_remote_call_api)
+
+    compile ( libraries.mmseg4j_core)
+    compile ( libraries.sqlite )
+    compile ( libraries.jaxen )
+    compile( libraries.axis )
+    testCompile ( libraries.spring_test )
+}

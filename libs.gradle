@@ -1,0 +1,249 @@
+ext{
+    springVersion = '4.2.5.RELEASE'
+    logbackVersion = '1.1.2'
+    hbaseVersion = '1.0.1.1'
+    hadoopVersion = '2.6.0'
+    elasticsearchVersion = '5.0.2'
+    hibernateVersion = '5.1.1.Final'
+    titanVersion = '1.0.0'
+    velocityVersion = '1.4'
+    jacksonVersion = '2.8.5'
+    stormVersion = '1.1.0'
+    kafkaVersion = '0.10.1.0'
+    slf4jVersion = '1.7.21'
+    loggingVersion = '2.8'
+    shiroVersion = '1.3.2'
+
+    libraries = [
+        junit:                  'junit:junit:4.11'
+
+        // 日志
+        ,slf4j_api:             'org.slf4j:slf4j-api:' + slf4jVersion
+        ,slf4j_log4j_over_slf4j:'org.slf4j:log4j-over-slf4j:' + slf4jVersion
+        ,slf4j_log4j:           'org.slf4j:slf4j-log4j12:' + slf4jVersion
+		,slf4j_jcl_over_slf4j:  'org.slf4j:jcl-over-slf4j:' + slf4jVersion
+        ,logback_core:          'ch.qos.logback:logback-core:' + logbackVersion
+        ,logback_classic:       'ch.qos.logback:logback-classic:' + logbackVersion
+        ,log4j_api:             'org.apache.logging.log4j:log4j-api:' + loggingVersion
+        ,log4j_core:            'org.apache.logging.log4j:log4j-core:' + loggingVersion
+        ,log4j_slf4j_impl:       'org.apache.logging.log4j:log4j-slf4j-impl:' + loggingVersion
+        ,log4j:                 'log4j:log4j:1.2.17'
+        ,log4j_1_2_api:			'org.apache.logging.log4j:log4j-1.2-api:' + loggingVersion
+
+        // spring
+        ,spring_core:           'org.springframework:spring-core:' + springVersion
+        ,spring_context:        'org.springframework:spring-context:' + springVersion
+        ,spring_context_support:'org.springframework:spring-context-support:' + springVersion
+        ,spring_jdbc:           'org.springframework:spring-jdbc:' + springVersion
+        ,spring_orm:            'org.springframework:spring-orm:' + springVersion
+        ,spring_aop:            'org.springframework:spring-aop:' + springVersion
+        ,spring_test:           'org.springframework:spring-test:' + springVersion
+        ,spring_web:            'org.springframework:spring-web:' + springVersion
+        ,spring_webmvc:         'org.springframework:spring-webmvc:' + springVersion
+        ,spring_expression:     'org.springframework:spring-expression:' + springVersion
+        ,spring_beans:          'org.springframework:spring-beans:' + springVersion
+        ,spring_tx:             'org.springframework:spring-tx:' + springVersion      
+
+		//spring-data
+		,'spring_data_jpa':			'org.springframework.data:spring-data-jpa:1.11.6.RELEASE'
+
+        // hibernate
+        ,hibernate_core:        'org.hibernate:hibernate-core:' + hibernateVersion
+        ,hibernate_ehcache:     'org.hibernate:hibernate-ehcache:' + hibernateVersion
+		,hibernate_validator:    'org.hibernate.validator:hibernate-validator:6.0.1.Final'
+
+        // hbase
+        ,hbase_common:          'org.apache.hbase:hbase-common:' + hbaseVersion
+        ,hbase_client:          'org.apache.hbase:hbase-client:' + hbaseVersion
+
+        // hadoop
+        ,hadoop_common:         'org.apache.hadoop:hadoop-common:' + hadoopVersion
+        ,hadoop_hdfs:           'org.apache.hadoop:hadoop-hdfs:' + hadoopVersion
+        ,hadoop_mapreduce_client_core:'org.apache.hadoop:hadoop-mapreduce-client-core:' + hadoopVersion
+        
+         // kafka
+        ,kafka_client:          'org.apache.kafka:kafka-clients:' + kafkaVersion
+        ,kafka_core:            'org.apache.kafka:kafka_2.11:' + kafkaVersion
+        
+
+        // storm
+        ,storm_core:            'org.apache.storm:storm-core:' + stormVersion
+        ,storm_kafka:           'org.apache.storm:storm-kafka:' + stormVersion
+		,storm_kafka_client:	'org.apache.storm:storm-kafka-client:' + stormVersion
+
+
+        // elasticSearch
+        ,elasticsearch:         'org.elasticsearch:elasticsearch:' + elasticsearchVersion
+        ,transport:				'org.elasticsearch.client:transport:' + elasticsearchVersion
+
+      
+        // titan
+        ,titan_core:            'com.thinkaurelius.titan:titan-core:'  + titanVersion
+        ,titan_hbase:           'com.thinkaurelius.titan:titan-hbase:1.0.1.1'
+        ,titan_es5:             'com.thinkaurelius.titan:titan-es5.0:1.0.0'
+        ,giraph_core:           'org.apache.giraph:giraph-core:1.1.0'
+	    ,gremlin_core:          "org.apache.tinkerpop:gremlin-core:3.0.1-incubating"
+		,gremlin_groovy:        "org.apache.tinkerpop:gremlin-groovy:3.0.1-incubating"
+		,tinkergraph_gremlin:   "org.apache.tinkerpop:tinkergraph-gremlin:3.0.1-incubating"
+		,metrics_core:          "com.codahale.metrics:metrics-core:3.0.1"
+	    ,metrics_ganglia:       "com.codahale.metrics:metrics-ganglia:3.0.1"
+		,metrics_graphite:      "com.codahale.metrics:metrics-graphite:3.0.1"
+		,reflections:           "org.reflections:reflections:0.9.9-RC1"
+		,high_scale:            "com.github.stephenc.high-scale-lib:high-scale-lib:1.1.4"
+		,jsr305:                "com.google.code.findbugs:jsr305:3.0.0"
+		,spatial4j:             "com.spatial4j:spatial4j:0.4.1"
+
+        // jackson
+        ,jackson_core:          'com.fasterxml.jackson.core:jackson-core:'     + jacksonVersion
+        ,jackson_databind:      'com.fasterxml.jackson.core:jackson-databind:' + jacksonVersion
+        ,jackson_annotations:   'com.fasterxml.jackson.annotation:jackson-annotations:2.8.0'
+        ,jackson_core_asl:      'org.codehaus.jackson:jackson-core-asl:1.9.13'
+        ,jackson_dataformat_cbor:   'com.fasterxml.jackson.dataformat.cbor:jackson-dataformat-cbor:2.8.1'
+        ,jackson_dataformat_smile:  'com.fasterxml.jackson.dataformat.smile:jackson-dataformat-smile:2.8.1'
+        ,jackson_dataformat_yaml:   'com.fasterxml.jackson.dataformat.yaml:jackson-dataformat-yaml:2.8.1'
+        ,jackson_jaxrs:         'org.codehaus.jackson.jaxrs:jackson-jaxrs:1.9.13'
+        ,jackson_mapper_asl:    'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
+        ,jackson_xc:            'org.codehaus.jackson.xc:jackson-xc:1.9.13'
+
+        // fastjson
+        ,fastjson:              'com.alibaba:fastjson:1.2.21'
+
+        // velocity
+        ,velocity:              'velocity:velocity:' + velocityVersion
+        ,velocity_tools:        'velocity-tools:velocity-tools-view:' + velocityVersion
+
+        // apache commons
+        ,commons_lang3:         'org.apache.commons:commons-lang3:3.2.1'
+        ,commons_beanutils:     'commons-beanutils:commons-beanutils:1.9.3'
+        ,commons_pool:          'commons-pool:commons-pool:1.6'
+        ,commons_pool2:         'org.apache.commons:commons-pool2:2.4.2'
+        ,commons_collections:   'commons-collections:commons-collections:3.2.1'
+        ,commons_chain:         'commons-chain:commons-chain:1.2'
+        ,commons_digester:      'commons-digester:commons-digester:1.8'
+        ,commons_codec:         'commons-codec:commons-codec:1.9'
+        ,commons_io:            'commons-io:commons-io:2.5'
+        ,commons_net:           'commons-net:commons-net:2.0'
+        ,commons_configuration: 'commons-configuration:commons-configuration:1.6'
+        ,commons_logging:       'org.apache.commons.logging:commons-logging:1.2'
+        ,commons_fileupload:    'org.apache.commons.fileupload:commons-fileupload:1.3'
+        ,commons_dbcp:          'commons-dbcp:commons-dbcp:1.4'
+        ,commons_httpclient:    'commons-httpclient:commons-httpclient:3.1'
+        ,httpasyncclient:        'org.apache.httpcomponents:httpasyncclient:4.1.2'
+        ,fluent_hc:              'org.apache.httpcomponents:fluent-hc:4.5.2'
+
+        // shiro
+        ,shiro_core:            'org.apache.shiro:shiro-core:' + shiroVersion
+        ,shiro_web:             'org.apache.shiro:shiro-web:' + shiroVersion
+        ,shiro_ehcache:         'org.apache.shiro:shiro-ehcache:' + shiroVersion
+        ,shiro_spring:          'org.apache.shiro:shiro-spring:' + shiroVersion
+        ,shiro_quartz:          'org.apache.shiro:shiro-quartz:' + shiroVersion
+		,shiro_all:				'org.apache.shiro:shiro-all:1.4.0'
+        
+        
+        // zookeeper
+        ,zookeeper:             'org.apache.zookeeper:zookeeper:3.4.8'
+        ,zkclient:              'com.101tec:zkclient:0.9'
+        // redis
+        ,redis:                 'redis.clients:jedis:2.9.0'
+
+        ,netty_all:             'io.netty:netty-all:4.1.6.Final'
+        ,netty_final:           'org.jboss.netty:netty:3.2.5.Final'
+        ,aspectjrt:             'org.aspectj:aspectjrt:1.8.9'
+        ,aspectjweaver:         'org.aspectj:aspectjweaver:1.8.9'
+        ,c3p0:                  'c3p0:c3p0:0.9.1.2'
+        ,mysql:                 'mysql:mysql-connector-java:5.1.31'
+        ,mongo:                 'org.mongodb:mongo-java-driver:3.2.2'
+        ,ant:                   'org.apache.ant:ant:1.8.4'
+        ,antlr:                 'antlr:antlr:2.7.7'
+        ,trove:                 'trove:trove:3.0.3'
+        ,configuration:         'commons-configuration:commons-configuration:1.6'
+        ,zip4j:                 'zip4j:zip4j:1.3.2'
+        ,zipjbinding:           'sevenzipjbinding:sevenzipjbinding:0.1'
+        ,zipjbindingLinux:      'sevenzipjbindingLinuxamd64:sevenzipjbindingLinuxamd64:0.1'
+        ,dom4j:                 'dom4j:dom4j:1.6.1'
+        ,pinyin4j:              'pinyin4j:pinyin4j:2.5.0'
+        ,tike_core:             'org.apache.tika:tika-core:1.5'
+        ,hanlp:                 'com.hankcs:hanlp:portable-1.2.8'
+        ,poi:                   'org.apache.poi:poi:3.15'
+		,poi_ooxml:				'org.apache.poi:poi-ooxml:3.15'
+		,poi_ooxml_schemas:		'org.apache.poi:poi-ooxml-schemas:3.15'
+        ,sqlite:                'sqlite-jdbc:sqlite-jdbc:3.7.2'
+	
+
+        ,fel:                   'fel:fel:0.8'
+        ,jxl:                   'jxl:jxl:2.4.2'
+        ,mmseg4j_core:          'mmseg4j-core:mmseg4j-core:1.10.0'
+        ,servlet:               'javax.servlet:javax.servlet-api:3.1.0'
+        ,jsp_api:               'javax.servlet.jsp:jsp-api:2.2'
+        ,jaxen:                 'jaxen:jaxen:1.1.6'
+        ,cbbs:                  ':cbbs-0.2.0'
+        ,javascv:               "net.sourceforge.javacsv:javacsv:2.0"
+        // ,kaptcha:               'com:kaptcha:2.3.2'
+        ,standard:              'org.apache.taglibs.standard:standard:1.1.2'
+        ,jstl:                  'jstl:jstl:1.2'
+        ,codehaus_jackson:      ':jackson-1.9.11'
+		,quartz_scheduler:		'org.quartz-scheduler:quartz:2.2.2'
+		,isoparser:				':isoparser:1.0'
+		,classmate:             'com.fasterxml:classmate:1.3.0'
+		,geronimo_jta:          'org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1'
+		,pageoffice:			':pageoffice:3.0'
+		// guava
+		 ,guava:  				'com.google.guava:guava:18.0'
+		
+        // websocket
+        ,websocket:             'javax.websocket:javax.websocket-api:1.0'
+		,lucene_analyzers_common: 'org.apache.lucene:lucene-analyzers-common:6.2.1'
+		,lucene_core:			'org.apache.lucene:lucene-core:6.2.1'
+		,pdfbox:				'org.apache.pdfbox:pdfbox:1.8.4'
+
+		
+		//cxf
+		,axis:					'axis:axis:1.4'
+		// ,jaxrpc:				'javax.xml:jaxrpc:1.0'
+		,gson:					'com.google.code.gson:gson:2.7'
+		,cxf_rt_transports_http:	'org.apache.cxf:cxf-rt-transports-http:3.1.8'
+		,cxf_rt_frontend_jaxws:	'org.apache.cxf:cxf-rt-frontend-jaxws:3.1.8'
+		,cxf_rt_bindings_soap:	'org.apache.cxf:cxf-rt-bindings-soap:3.1.8'
+		,cxf_rt_bindings_xml:	'org.apache.cxf:cxf-rt-bindings-xml:3.1.8'
+		,cxf_rt_databinding_jaxb:	'org.apache.cxf:cxf-rt-databinding-jaxb:3.1.8'
+		,cxf_rt_frontend_simple:	'org.apache.cxf:cxf-rt-frontend-simple:3.1.8'
+		,cxf_rt_ws_addr:		'org.apache.cxf:cxf-rt-ws-addr:3.1.8'
+		,cxf_rt_wsdl:			'org.apache.cxf:cxf-rt-wsdl:3.1.8'
+		,cxf_rt_ws_policy:		'org.apache.cxf:cxf-rt-ws-policy:3.1.8'
+		// ,asm:					'asm:asm:5.0.4'
+		,cxf_core:				'org.apache.cxf:cxf-core:3.1.8'
+		,jaxb_core:				'com.sun.xml.bind:jaxb-core:2.2.11'
+		,jaxb_impl:				'com.sun.xml.bind:jaxb-impl:2.2.11'
+		,neethi:				'org.apache.neethi:neethi:3.0.3'
+		,xmlschema_core:		'org.apache.ws.xmlschema:xmlschema-core:2.0.3'
+		,wsdl4j:				'wsdl4j:wsdl4j:1.6.2'
+		,cxf_rt_transports_http_jetty:	'org.apache.cxf:cxf-rt-transports-http-jetty:3.1.8'
+		,jetty_io:				'org.eclipse.jetty:jetty-io:9.2.21.v20170120'
+		,jetty_continuation:	'org.eclipse.jetty:jetty-continuation:9.2.21.v20170120'
+		,jetty_http:			'org.eclipse.jetty:jetty-http:9.2.21.v20170120'
+		,jetty_security:		'org.eclipse.jetty:jetty-security:9.2.21.v20170120'
+		,jetty_server:			'org.eclipse.jetty:jetty-server:9.2.21.v20170120'
+		,jetty_util:			'org.eclipse.jetty:jetty-util:9.2.21.v20170120'
+		
+
+		,clojure:				'org.clojure:clojure:1.7.0'
+		,disruptor:				'com.lmax:disruptor:3.3.2'
+		,kryo:					'com.esotericsoftware:kryo:3.0.3'
+		,json_simple:			'com.googlecode.json-simple:json-simple:1.1.1'
+		,freemarker:			"org.freemarker:freemarker:2.3.12"
+		,ojdbc:			        "oracle:ojdbc:10.2.0.4.0"
+		//springside
+		,springside_core:		'org.springside:springside-core:4.2.3-GA'
+		,springside_utils:		'io.springside:springside-utils:5.0.0-RC1'
+		// datapool
+		,tomcat_jdbc:			'org.apache.tomcat:tomcat-jdbc:9.0.0.M25'
+		,druid:					'com.alibaba:druid:1.1.2'
+		//ylz
+		,ylzcrud_common	:		':ylzcrud-common1.0'
+		,ylzcrud_params: 		':ylzcrud-params1.0'
+
+		,lombok:				'org.projectlombok:lombok:1.16.18'
+		,jade_remote_core:		':jade-remote-core-bin'
+		,uum_remote_call_api:	':uum-remote-call-api'
+    ]
+}
